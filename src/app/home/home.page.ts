@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { ParedesPage } from '../paredes/paredes.page';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public navCtrl : NavController) {}
 
   altura : number;
   largura : number;
@@ -30,8 +32,7 @@ export class HomePage {
     if(this.altura == 0 || this.largura == 0 || isNaN(this.altura) || isNaN(this.largura)){
       alert("Dados incorretos, Preencha corretamente os dois campos");
     }else{
-      this.area = this.altura * this.largura;
-      this.info = "As medidas sao "+ this.altura +" x "+ this.largura +" e a Area da sua parede e: " + this.area + "m², portanto serao necessarios " + this.area / 2 + " litros de tinta";
+      this.navCtrl.push(ParedesPage);
     }
   }
 }
