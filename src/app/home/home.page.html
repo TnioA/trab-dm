@@ -1,14 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+        Calculador de Tinta
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <h2></h2>
+    <p>App para informar a quantidade ideal de tinta para pintura de sua parede</p>
+    <ion-item>
+        <ion-label>Altura: </ion-label>
+        <ion-input type="text" [(ngModel)]="altura" name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Largura: </ion-label>
+        <ion-input type="text" [(ngModel)]="largura" name="title"></ion-input>
+      </ion-item>
+      <ion-button ion-button type="submit" (click)="Calcular()">Calcular</ion-button>
+      <ion-button ion-button type="submit" (click)="Salvar()">Salvar</ion-button>
+  </div>
+  <div class="ion-padding">
+    <p>Informações: </p>
+    <p>{{info}}</p>
+    <p>{{tinta}}</p>
   </div>
 </ion-content>
